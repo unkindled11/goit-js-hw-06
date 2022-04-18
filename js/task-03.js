@@ -18,15 +18,9 @@ const images = [
 const list = document.querySelector('.gallery');
 
 
-const urls = images.flatMap((element) => element.url);
-
-const alts = images.flatMap((element) => element.alt);
-
-
-const markup = urls.map((element) => `<li ><img width=250 height = 150 src = ${element}></li>`).join("");
-
+const galleryItem = images.map((item) => `<li><img width=250px height=200px src="${item.url}" alt="${item.alt}"></img></li>`).join("");
   
-list.insertAdjacentHTML("beforeend", markup);
+list.insertAdjacentHTML("afterbegin", galleryItem);
 
 
 list.style.backgroundColor = "teal"
@@ -34,5 +28,6 @@ list.style.padding = "20px 20px"
 list.style.display = "flex"
 list.style.justifyContent = "space-evenly"
 list.style.listStyle="none"
+
 
 
