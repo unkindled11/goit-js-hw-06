@@ -8,15 +8,21 @@ console.log(input.value.length)
 
 input.addEventListener('blur', onInputBlur);
 
+function classAction( remove , add) {
+    
+    input.classList.remove(remove);
+    input.classList.add(add);
+
+}
 
 function onInputBlur(event) {
+
     if (input.value.length >= input.getAttribute('data-length')) {
-        input.classList.remove('invalid')
-        input.classList.add('valid')
+        classAction("invalid","valid")
     } else { 
-        input.classList.remove('valid')
-        input.classList.add('invalid')
+       classAction("valid","invalid")
     }
+    
 }
 
 

@@ -7,15 +7,21 @@ function formSubmit(event) {
 
     const formElements = event.currentTarget.elements;
 
-    const formData = new FormData(event.currentTarget);
+    const email = formElements.email.value;
 
-    formData.forEach((value, name) => {
-        console.log('formSubmit -->', name, value);
-    })
+    const password = formElements.password.value;
 
-    if (formElements.email.value === "" || formElements.password.value==="") {
+    const dataToConsole = {
+        email,
+        password
+        
+   }
+
+    if (email === "" || password ==="") {
         return alert("Будь ласка, заповни усi поля :--)")
     }
-
+    
+    console.log(dataToConsole);
+    event.currentTarget.reset();
 }
 

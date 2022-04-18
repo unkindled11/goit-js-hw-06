@@ -1,29 +1,13 @@
-// Task 01-1
-const categories = document.querySelector('#categories')
+// Task 01-01
 
-console.log('Number of categories:', categories.children.length);
+console.log("Number of categories:" + document.querySelector('#categories').children.length);
 
-//Task-01-2
-const animals = categories.childNodes[1]
-const animalsText = animals.querySelector('h2').textContent
-const animalsList = animals.querySelector('ul').children.length 
 
-const products = categories.childNodes[3]
-const productsText = products.querySelector('h2').textContent
-const productsList = products.querySelector('ul').children.length
+// Task 01-02
 
-const technologies = categories.childNodes[5]
-const technologiesText = technologies.querySelector('h2').textContent
-const technologiesList = technologies.querySelector('ul').children.length
+const items = document.querySelectorAll('.item>ul');
 
-function input(category, elements) {
-    
-    console.log(`Category: ${category}`);
-    
-    console.log(`Elements:${elements}`);
-    
-}
 
-input(animalsText, animalsList)
-input(productsText, productsList)
-input(technologiesText,technologiesList)
+items.forEach((item => console.log("Elements:" + item.children.length + " Category:" + item.previousElementSibling.textContent)))
+
+
